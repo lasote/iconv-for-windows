@@ -1,7 +1,7 @@
 PROJECT(Iconv)
 cmake_minimum_required(VERSION 2.8)
 
-ADD_LIBRARY(iconv src/iconv.c libcharset/lib/localcharset.c libcharset/lib/relocatable.c)
+ADD_LIBRARY(iconv src/iconv.c libiconv/localcharset.c libiconv/relocatable.c)
 TARGET_INCLUDE_DIRECTORIES(iconv PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include" "${CMAKE_CURRENT_SOURCE_DIR}/libcharset/lib")
 
 SET(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/bin)
