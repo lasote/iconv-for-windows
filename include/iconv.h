@@ -105,6 +105,7 @@ extern LIBICONV_DLL_EXPORTED iconv_t iconv_open (const char* tocode, const char*
 #  define WINICONV_CONST const
 # endif
 
+#warning "iconv function inbuf type is WINICONV_CONST char**"
 
 ///////////////////////// 삭제 / DELETE / УДАЛИТЬ ///////////////////////
 //extern LIBICONV_DLL_EXPORTED size_t iconv (iconv_t cd, @ICONV_CONST@ char* * inbuf, size_t *inbytesleft, char* * outbuf, size_t *outbytesleft);
