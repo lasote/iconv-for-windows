@@ -97,11 +97,19 @@ extern LIBICONV_DLL_EXPORTED iconv_t iconv_open (const char* tocode, const char*
 #ifndef LIBICONV_PLUG
 #define iconv libiconv
 #endif
+   
+#ifndef WINICONV_CONST
+# ifdef ICONV_CONST
+#  define WINICONV_CONST ICONV_CONST
+# else
+#  define WINICONV_CONST const
+# endif
+
 
 ///////////////////////// 삭제 / DELETE / УДАЛИТЬ ///////////////////////
 //extern LIBICONV_DLL_EXPORTED size_t iconv (iconv_t cd, @ICONV_CONST@ char* * inbuf, size_t *inbytesleft, char* * outbuf, size_t *outbytesleft);
 ///////////////////////// 추가 / ADD / ДОВАВЛЯТЬ //////////////////////
-extern LIBICONV_DLL_EXPORTED size_t iconv (iconv_t cd, const char* * inbuf, size_t *inbytesleft, char* * outbuf, size_t *outbytesleft);
+extern LIBICONV_DLL_EXPORTED size_t iconv (iconv_t cd, WINICONV_CONST char* * inbuf, size_t *inbytesleft, char* * outbuf, size_t *outbytesleft);
 ////////////////////////////////////////////////////////////////////////////////
 
 /* Frees resources allocated for conversion descriptor ‘cd’. */
@@ -117,6 +125,7 @@ extern LIBICONV_DLL_EXPORTED int iconv_close (iconv_t cd);
 
 
 #ifndef LIBICONV_PLUG
+
 
 /* Nonstandard extensions. */
 
