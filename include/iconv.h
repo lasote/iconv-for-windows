@@ -104,7 +104,7 @@ extern LIBICONV_DLL_EXPORTED iconv_t iconv_open (const char* tocode, const char*
 # else
 #  define WINICONV_CONST const
 # endif
-
+#endif
 
 
 ///////////////////////// 삭제 / DELETE / УДАЛИТЬ ///////////////////////
